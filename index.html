@@ -40,7 +40,7 @@
     input:focus { outline: none; border-color: #22c55e; }
     .info-box { background: #1f2937; padding: 15px; border-radius: 10px; margin-top: 15px; }
     .info-box p { margin-bottom: 5px; }
-    #reader { width: 100%; height: calc(100dvh - 60px); border: none; }
+    #reader { width: 100%; max-width: 380px; aspect-ratio: 3/4; margin: 15px auto; border: none; border-radius: 12px; overflow: hidden; background: #000; }
     #reader.flash-green { animation: flashGreen 0.3s ease 3; }
     #reader.flash-red { animation: flashRed 0.3s ease 3; }
     @keyframes flashGreen { 0%,100% { border-color: #22c55e; } 50% { border-color: #374151; } }
@@ -57,6 +57,7 @@
     .toast { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); background: #22c55e; color: #fff; padding: 12px 24px; border-radius: 8px; font-weight: 600; z-index: 200; animation: toastIn 0.3s ease; }
     .toast.error { background: #ef4444; }
     @keyframes toastIn { from { bottom: -50px; opacity: 0; } to { bottom: 30px; opacity: 1; } }
+    @media print { .no-print { display: none; } }
   </style>
 </head>
 <body>
