@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="theme-color" content="#111827">
   <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>مسح الباركود</title>
   <link rel="manifest" href="manifest.json">
@@ -121,9 +122,9 @@
         const el = document.getElementById('reader');
         if (!el) return;
         qr = new Html5Qrcode('reader');
-        try { await qr.start({facingMode:'environment'},{fps:10,qrbox:{width:320,height:320}},onScan); }
+        try { await qr.start({facingMode:'environment'},{fps:10,qrbox:{width:280,height:280}},onScan); }
         catch(e) {
-          try { const c=await Html5Qrcode.getCameras(); if(c.length) await qr.start({deviceId:{exact:c[0].id}},{fps:10,qrbox:{width:320,height:320}},onScan); }
+          try { const c=await Html5Qrcode.getCameras(); if(c.length) await qr.start({deviceId:{exact:c[0].id}},{fps:10,qrbox:{width:280,height:280}},onScan); }
           catch(e2) {
             document.getElementById('reader').innerHTML =
               '<div style="text-align:center;padding:50px;color:#ef4444"><p style="font-size:3rem;margin-bottom:15px">📷</p><p>تعذر تشغيل الكاميرا</p><p style="font-size:0.85rem;color:#9ca3af;margin-top:10px">تأكد من صلاحية الكاميرا</p><button onclick="stop();nav(\'home\')" style="margin-top:20px;padding:12px 30px;background:#374151;color:#fff;border:none;border-radius:8px;font-size:1rem;width:auto">← العودة</button></div>';
